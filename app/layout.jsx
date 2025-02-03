@@ -10,8 +10,8 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata = {
-  title: "CV Juan Manuel Gallegos",
-  description: "CV",
+  title: "Juan Manuel Gallegos",
+  description: "Portfolio",
 };
 
 export default function RootLayout({ children }) {
