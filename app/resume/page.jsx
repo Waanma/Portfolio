@@ -1,6 +1,6 @@
-"use client";
+'use client';
 
-import { FaHtml5, FaReact } from "react-icons/fa";
+import { FaHtml5, FaReact } from 'react-icons/fa';
 import {
   SiCss3,
   SiTailwindcss,
@@ -16,145 +16,147 @@ import {
   SiJest,
   SiTestinglibrary,
   SiRedux,
-} from "react-icons/si";
-import { TabsContent, Tabs, TabsList, TabsTrigger } from "@radix-ui/react-tabs";
+} from 'react-icons/si';
+import { TabsContent, Tabs, TabsList, TabsTrigger } from '@radix-ui/react-tabs';
 import {
   Tooltip,
   TooltipContent,
   TooltipProvider,
   TooltipTrigger,
-} from "../../components/ui/tooltip";
-import { ScrollArea } from "../../components/ui/scroll-area";
-import { motion } from "framer-motion";
+} from '../../components/ui/tooltip';
+import { ScrollArea } from '../../components/ui/scroll-area';
+import { motion } from 'framer-motion';
 
 const about = {
-  title: "About me",
-  description: "React Native Developer",
+  title: 'About me',
+  description: 'React Native Developer',
   info: [
     {
-      fieldName: "Name:",
-      fieldValue: "Juan Manuel Gallegos",
+      fieldName: 'Name:',
+      fieldValue: 'Juan Manuel Gallegos',
     },
     {
-      fieldName: "Phone:",
-      fieldValue: "(+54) 2664 018067",
+      fieldName: 'Phone:',
+      fieldValue: '(+54) 2664 018067',
     },
     {
-      fieldName: "Nationality:",
-      fieldValue: "Argentina",
+      fieldName: 'Nationality:',
+      fieldValue: 'Argentina',
     },
     {
-      fieldName: "Email:",
-      fieldValue: "wanmagallegos@gmail.com",
+      fieldName: 'Email:',
+      fieldValue: 'wanmagallegos@gmail.com',
     },
     {
-      fieldName: "Language:",
-      fieldValue: "Spanish(native), English(B1)",
+      fieldName: 'Language:',
+      fieldValue: 'Spanish(native), English(B1)',
     },
   ],
 };
 
 const education = {
-  icon: "",
-  title: "Education",
-  description: "Lorem ipsum dolor sit amet, consectetur",
+  icon: '',
+  title: 'Education',
+  description:
+    'A passionate learner with a strong foundation in mobile development, web development, and JavaScript & TypeScript. My journey in technology includes hands-on experience gained through specialized courses at Coderhouse, where I refined my skills to build modern, user-friendly applications.',
   items: [
     {
-      institution: "Coderhouse",
-      position: "Mobile Developer",
-      duration: "2023",
+      institution: 'Coderhouse',
+      position: 'Mobile Developer',
+      duration: '2023',
     },
     {
-      institution: "Coderhouse",
-      position: "JavaScript",
-      duration: "2022 - 2023",
+      institution: 'Coderhouse',
+      position: 'JavaScript',
+      duration: '2022 - 2023',
     },
     {
-      institution: "Coderhouse",
-      position: "CSS",
-      duration: "2022",
+      institution: 'Coderhouse',
+      position: 'CSS',
+      duration: '2022',
     },
     {
-      institution: "Coderhouse",
-      position: "Web Developer",
-      duration: "2022",
+      institution: 'Coderhouse',
+      position: 'Web Developer',
+      duration: '2022',
     },
   ],
 };
 
 const skills = {
-  title: "Skills",
-  description: "lorem ipsum dolor sit amet, consectetur",
+  title: 'Skills',
+  description:
+    'With a diverse set of skills in modern web and mobile development, I specialize in creating seamless user experiences using a range of technologies. From building cross-platform apps with React Native to crafting responsive designs with CSS and Tailwind, I’m equipped to tackle a variety of development challenges.',
   items: [
     {
-      name: "React Native",
+      name: 'React Native',
       icon: <FaReact />,
     },
     {
-      name: "CSS",
+      name: 'CSS',
       icon: <SiCss3 />,
     },
     {
-      name: "Tailwind CSS",
+      name: 'Tailwind CSS',
       icon: <SiTailwindcss />,
     },
     {
-      name: "JavaScript",
+      name: 'JavaScript',
       icon: <SiJavascript />,
     },
     {
-      name: "TypeScript",
+      name: 'TypeScript',
       icon: <SiTypescript />,
     },
     {
-      name: "HTML5",
+      name: 'HTML5',
       icon: <FaHtml5 />,
     },
     {
-      name: "Styled Components",
+      name: 'Styled Components',
       icon: <SiStyledcomponents />,
     },
     {
-      name: "GraphQL",
+      name: 'GraphQL',
       icon: <SiGraphql />,
     },
     {
-      name: "Redux",
+      name: 'Redux',
       icon: <SiRedux />,
     },
     {
-      name: "Axios",
+      name: 'Axios',
       icon: <SiAxios />,
     },
     {
-      name: "Jest",
+      name: 'Jest',
       icon: <SiJest />,
     },
     {
-      name: "Testing Library",
+      name: 'Testing Library',
       icon: <SiTestinglibrary />,
     },
     {
-      name: "Android",
+      name: 'Android',
       icon: <SiAndroid />,
     },
     {
-      name: "iOS",
+      name: 'iOS',
       icon: <SiApple />,
     },
     {
-      name: "Git",
+      name: 'Git',
       icon: <SiGit />,
     },
     {
-      name: "GitHub",
+      name: 'GitHub',
       icon: <SiGithub />,
     },
   ],
 };
 
 const tabsStyle =
-  "hover:bg-white/30 rounded-sm hover:text-acent-hover bg-white/10";
+  'hover:bg-white/30 rounded-sm hover:text-acent-hover bg-white/10';
 
 const Resume = () => {
   return (
@@ -162,7 +164,7 @@ const Resume = () => {
       initial={{ opacity: 0 }}
       animate={{
         opacity: 1,
-        transition: { delay: 2.4, duration: 0.4, ease: "easeIn" },
+        transition: { delay: 2.4, duration: 0.4, ease: 'easeIn' },
       }}
       className="min-h-[80vh] flex items-center justify-center py-12"
     >
@@ -177,7 +179,7 @@ const Resume = () => {
             </TabsTrigger>
             <TabsTrigger value="education" className={tabsStyle}>
               Education
-            </TabsTrigger>{" "}
+            </TabsTrigger>{' '}
             <TabsTrigger value="about" className={tabsStyle}>
               About me
             </TabsTrigger>

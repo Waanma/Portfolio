@@ -1,101 +1,133 @@
-"use client";
+'use client';
 
-import { motion } from "framer-motion";
-import { useState } from "react";
-import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/css";
-import { BsGithub } from "react-icons/bs";
+import { motion } from 'framer-motion';
+import { useState } from 'react';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import { BsGithub } from 'react-icons/bs';
 import {
   Tooltip,
   TooltipProvider,
   TooltipTrigger,
-} from "../../components/ui/tooltip";
-import WorkSliderBtns from "../../components/WorkSliderBtns";
+} from '../../components/ui/tooltip';
+import WorkSliderBtns from '../../components/WorkSliderBtns';
 
-import Link from "next/link";
+import Link from 'next/link';
 
 const projects = [
   {
-    num: "01",
-    title: "Crypto Consults",
+    num: '01',
+    title: 'Delivery & Pick Up',
     description:
-      "A mobile application built with React Native and Expo that allows users to explore a real-time list of cryptocurrencies. Users can add their favorite cryptos to a personalized list and easily remove them as needed.",
-    img: "/assets/img/work/cryptoCollage.jpg",
+      'A mobile app built with React Native and NextJs that provides a Map and a navigation system, also a web app to upload route manifests.',
+    img: '/assets/img/work/insightDrive.jpg',
     stack: [
-      { name: "React Native" },
-      { name: "Styled-Components" },
-      { name: "TypeScript" },
-      { name: "Expo" },
-      { name: "React Router" },
+      { name: 'React Native CLI' },
+      { name: 'Styled-Components, TailwindCSS' },
+      { name: 'TypeScript' },
+      { name: 'Zustand' },
+      { name: 'React Native Navigation' },
+      { name: 'Radar' },
+      { name: 'Google Maps' },
     ],
-    link: "https://github.com/Waanma/consultCrypto",
+    link: '',
   },
   {
-    num: "02",
-    title: "Pokedex",
+    num: '02',
+    title: 'Thoughts App',
     description:
-      "A mobile app built with React Native that allows users to explore Pokémon details, search, and save favorites. It uses Apollo Client with GraphQL for data fetching, Zustand for state management, and React Navigation for seamless navigation, providing a smooth and user-friendly experience.",
-    img: "/assets/img/work/pokedexCollage.jpg",
+      'A mobile app built with React Native that provides a list with thoughts, a screen to add thoughts manualy with text and "Voice to Text" and Siri shortcut to interact.',
+    img: '/assets/img/work/thoughts.jpg',
     stack: [
-      { name: "React Native CLI" },
-      { name: "Styled-Components" },
-      { name: "TypeScript" },
-      { name: "Zustand" },
-      { name: "React Native Reanimated" },
-      { name: "GraphQL - Apollo Client" },
-      { name: "Adobe Illustrator" },
+      { name: 'React Native CLI' },
+      { name: 'Styled-Components' },
+      { name: 'TypeScript' },
+      { name: 'React Native Navigation' },
+      { name: 'Siri' },
     ],
-    link: "https://github.com/Waanma/Pokedex",
+    link: '',
   },
   {
-    num: "03",
-    title: "Pocket Journal",
+    num: '03',
+    title: 'Crypto Consults',
     description:
-      "A mobile journaling app built with React Native and Expo. It allows users to create and manage journal entries, featuring seamless navigation with Expo Router and state management via Zustand. The app offers a clean, responsive design using Styled Components and supports offline functionality with AsyncStorage.",
-    img: "/assets/img/work/pocketJournalCollage.jpg",
+      'A mobile application built with React Native and Expo that allows users to explore a real-time list of cryptocurrencies. Users can add their favorite cryptos to a personalized list and easily remove them as needed.',
+    img: '/assets/img/work/cryptoCollage.jpg',
     stack: [
-      { name: "Expo" },
-      { name: "Tailwind - NativeWind" },
-      { name: "TypeScript" },
-      { name: "Zustand" },
-      { name: "React Native Reanimated" },
-      { name: "API Rest" },
-      { name: "expo-router" },
+      { name: 'React Native' },
+      { name: 'Styled-Components' },
+      { name: 'TypeScript' },
+      { name: 'Expo' },
+      { name: 'React Router' },
     ],
-    link: "https://github.com/Waanma/Pocket-Journal",
+    link: 'https://github.com/Waanma/consultCrypto',
   },
   {
-    num: "04",
-    title: "Recipe App",
+    num: '04',
+    title: 'Pokedex',
     description:
-      "A mobile application built with React Native and Expo that allows users to explore and view detailed recipes. Users can search for specific meals, view cooking videos, and save their favorite recipes. The app is styled using NativeWind, utilizes Zustand for state management, and features seamless navigation with Expo Router. ",
-    img: "/assets/img/work/recipesCollage.jpg",
+      'A mobile app built with React Native that allows users to explore Pokémon details, search, and save favorites. It uses Apollo Client with GraphQL for data fetching, Zustand for state management, and React Navigation for seamless navigation, providing a smooth and user-friendly experience.',
+    img: '/assets/img/work/pokedexCollage.jpg',
     stack: [
-      { name: "Expo" },
-      { name: "Tailwind - NativeWind" },
-      { name: "TypeScript" },
-      { name: "Zustand" },
-      { name: "Axios" },
-      { name: "expo-router" },
-      { name: "Jest" },
+      { name: 'React Native CLI' },
+      { name: 'Styled-Components' },
+      { name: 'TypeScript' },
+      { name: 'Zustand' },
+      { name: 'React Native Reanimated' },
+      { name: 'GraphQL - Apollo Client' },
+      { name: 'Adobe Illustrator' },
     ],
-    link: "https://github.com/Waanma/RecipesApp",
+    link: 'https://github.com/Waanma/Pokedex',
   },
   {
-    num: "05",
-    title: "Where In The World",
+    num: '05',
+    title: 'Pocket Journal',
     description:
-      "A mobile app built with React Native and Expo that provides detailed information about countries around the world. Users can search for countries, view relevant details, and save their favorite locations. The app uses Redux Toolkit for state management, React Navigation for navigation, and is styled with Styled Components for a clean and modern user interface.",
-    img: "/assets/img/work/countriesCollage.jpg",
+      'A mobile journaling app built with React Native and Expo. It allows users to create and manage journal entries, featuring seamless navigation with Expo Router and state management via Zustand. The app offers a clean, responsive design using Styled Components and supports offline functionality with AsyncStorage.',
+    img: '/assets/img/work/pocketJournalCollage.jpg',
     stack: [
-      { name: "React Native CLI" },
-      { name: "Styled-Components" },
-      { name: "TypeScript" },
-      { name: "Zustand" },
-      { name: "Axios" },
-      { name: "React Navigation" },
+      { name: 'Expo' },
+      { name: 'Tailwind - NativeWind' },
+      { name: 'TypeScript' },
+      { name: 'Zustand' },
+      { name: 'React Native Reanimated' },
+      { name: 'API Rest' },
+      { name: 'expo-router' },
     ],
-    link: "https://github.com/Waanma/WhereInTheWorld",
+    link: 'https://github.com/Waanma/Pocket-Journal',
+  },
+  {
+    num: '06',
+    title: 'Recipe App',
+    description:
+      'A mobile application built with React Native and Expo that allows users to explore and view detailed recipes. Users can search for specific meals, view cooking videos, and save their favorite recipes. The app is styled using NativeWind, utilizes Zustand for state management, and features seamless navigation with Expo Router. ',
+    img: '/assets/img/work/recipesCollage.jpg',
+    stack: [
+      { name: 'Expo' },
+      { name: 'Tailwind - NativeWind' },
+      { name: 'TypeScript' },
+      { name: 'Zustand' },
+      { name: 'Axios' },
+      { name: 'expo-router' },
+      { name: 'Jest' },
+    ],
+    link: 'https://github.com/Waanma/RecipesApp',
+  },
+  {
+    num: '07',
+    title: 'Where In The World',
+    description:
+      'A mobile app built with React Native and Expo that provides detailed information about countries around the world. Users can search for countries, view relevant details, and save their favorite locations. The app uses Redux Toolkit for state management, React Navigation for navigation, and is styled with Styled Components for a clean and modern user interface.',
+    img: '/assets/img/work/countriesCollage.jpg',
+    stack: [
+      { name: 'React Native CLI' },
+      { name: 'Styled-Components' },
+      { name: 'TypeScript' },
+      { name: 'Zustand' },
+      { name: 'Axios' },
+      { name: 'React Navigation' },
+    ],
+    link: 'https://github.com/Waanma/WhereInTheWorld',
   },
 ];
 
@@ -113,7 +145,7 @@ const Work = () => {
       initial={{ opacity: 0 }}
       animate={{
         opacity: 1,
-        transition: { delay: 2.4, duration: 0.4, ease: "easeIn" },
+        transition: { delay: 2.4, duration: 0.4, ease: 'easeIn' },
       }}
       className="min-h-[80vh] flex flex-col justify-center py-12 xl:py-0"
     >
@@ -164,14 +196,13 @@ const Work = () => {
               {projects.map((item, index) => {
                 return (
                   <SwiperSlide key={index} className="w-full">
-                    <div className="xl:h-max xl:w-[500px] w-[380px] relative group flex justify-center items-center bg-pink-50 rounded-2xl">
-                      <div className="absolute top-0 bottom-0 w-full h-full bg-black/10 z-10"></div>
+                    <div className="xl:h-[500px] w-full relative group flex justify-center items-center rounded-2xl">
+                      <div className="absolute top-0 bottom-0 w-full h-full z-10"></div>
                       <div className="rounded-2xl relative w-full h-full">
                         <img
                           src={item.img}
-                          alt="Img"
-                          fill
-                          className="objet-cover rounded-xl"
+                          alt={item.title}
+                          className="object-contain rounded-xl max-w-full max-h-full" // Asegura que la imagen se ajuste al contenedor sin cambiar su tamaño
                         />
                       </div>
                     </div>
